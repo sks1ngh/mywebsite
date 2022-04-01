@@ -4,6 +4,7 @@ var ejs = require("ejs");
 // const https = require("https");
 // const fs = require("fs");
 var jokes = require("./jokes");
+require("dotenv").config();
 
 // const options = {
 //   key: fs.readFileSync("key.pem"),
@@ -18,7 +19,9 @@ app.use(express.static("files"));
 app.get("/", (req, res) => {
   res.render("index.ejs", { jokes: jokes });
 });
-
-app.listen(3000, () => console.log("Server started!"));
+var server_host = process.env.YOUR_HOST || "0.0.0.0";
+app.listen(process.env.PORT || 3000, server_host, () =>
+  console.log("Server started!")
+);
 
 // https.createServer(options, app).listen(3000);
