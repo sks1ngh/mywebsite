@@ -19,6 +19,11 @@ app.use(express.static("files"));
 app.get("/", (req, res) => {
   res.render("index.ejs", { jokes: jokes });
 });
+
+app.use("", (req, res, next) => {
+  res.redirect("/");
+});
+
 var server_host = process.env.YOUR_HOST || "0.0.0.0";
 app.listen(process.env.PORT || 3000, server_host, () =>
   console.log("Server started!")
