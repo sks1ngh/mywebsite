@@ -105,33 +105,6 @@ var rand = Math.floor(Math.random() * 32 + 1);
 var temp = rand;
 isOver = false;
 
-function newJoke() {
-  document.querySelector("#newJoke").innerText = "Fetch me another joke!";
-  if (rand < 31) {
-    if (isOver == false) {
-      document.querySelector("#joke").innerText = joke[rand];
-      rand = rand + 1;
-      // console.log("Rand value after increment :- " ,rand)
-      if (rand == 31) {
-        isOver = true;
-        rand = 0;
-        // console.log("Rand and isover set :- ",rand,isOver)
-      }
-    } else {
-      if (rand < temp) {
-        // console.log("Rand inside else :- ",rand)
-        document.querySelector("#joke").innerText = joke[rand];
-        rand = rand + 1;
-      } else {
-        // console.log("Rand inside else else :- ",rand)
-        document.querySelector("#joke").innerText =
-          "Ran out of jokes :( Come back later for more :D";
-        document.querySelector("#newJoke").style.display = "none";
-      }
-    }
-  }
-}
-
 window.addEventListener("load", welcome);
 window.addEventListener("DOMContentLoaded", setNavBottom);
 window.addEventListener("DOMContentLoaded", setNavHeight);
@@ -148,4 +121,3 @@ window.addEventListener("DOMContentLoaded", highlighter);
 window.addEventListener("scroll", highlighter);
 window.addEventListener("scroll", progress);
 window.addEventListener("DOMContentLoaded", progress);
-jokeBtn.addEventListener("click", newJoke);
