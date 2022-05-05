@@ -175,7 +175,7 @@
       <div class="container-fluid" id ="footerDiv">
         <div class="container-fluid" id="jokeDiv">
             <p id="joke"></p>
-            <label onclick="newJoke()" id="newJoke" class="btn btn-outline-success">Fetch me a joke!</label>
+            <label onclick="newJoke(joke)" id="newJoke" class="btn btn-outline-success">Fetch me a joke!</label>
         </div>
         <div class="container-fluid" id="footernoteDiv">
           <p id="footernote">Made with<span style="color:red;"> ♥ </span>by SK</p></div>
@@ -198,18 +198,17 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      let joke = <%-JSON.stringify(jokes)%>;
-      console.log(joke)
+      var joke = <%-JSON.stringify(jokes)%>;
       var rand = Math.floor((Math.random()*32)+1);
       var temp = rand;
-      isOver = false;
+      var isOver = false;
       function newJoke(joke)
       {
         document.querySelector("#newJoke").innerText = "Fetch me another joke!"
         if (rand<31){
           if(isOver == false){
             document.querySelector("#joke").innerText = joke[rand]
-            rand = rand + 1;
+            rand += 1;
             // console.log("Rand value after increment :- " ,rand)
             if(rand == 31){
               isOver = true;
