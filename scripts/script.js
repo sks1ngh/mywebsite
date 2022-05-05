@@ -136,7 +136,7 @@ window.addEventListener("load", welcome);
 window.addEventListener("DOMContentLoaded", setNavBottom);
 window.addEventListener("DOMContentLoaded", setNavHeight);
 window.addEventListener("resize", setNavBottom);
-window.addEventListener("DOMContentLoaded", setimg);
+window.addEventListener("load", setimg);
 window.addEventListener("resize", setNavHeight);
 hb.addEventListener("click", hidesidebar);
 cb.addEventListener("click", showsidebar);
