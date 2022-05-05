@@ -132,7 +132,7 @@ function newJoke() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", welcome);
+window.addEventListener("load", welcome);
 window.addEventListener("DOMContentLoaded", setNavBottom);
 window.addEventListener("DOMContentLoaded", setNavHeight);
 window.addEventListener("resize", setNavBottom);
